@@ -1,3 +1,5 @@
+const Tarea = require('./tarea');
+
 class Tareas {
 
     _listado = {};
@@ -6,6 +8,11 @@ class Tareas {
         this._listado = {};
     }
 
+    crearTarea( desc = '' ) {
+        
+        const tarea = new Tarea(desc);
+        this._listado[tarea.id] = tarea;
+    }
 }
 
 module.exports = Tareas;
